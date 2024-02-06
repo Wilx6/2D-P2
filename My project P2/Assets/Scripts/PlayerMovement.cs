@@ -42,7 +42,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Collectible")
         {
-            Destroy(gameObject);
+            Destroy(other.gameObject);
+            myScore++;
         }
 
         
