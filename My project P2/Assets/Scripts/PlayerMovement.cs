@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     public int myScore;
 
+    public bool playerAlive = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +28,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (playerAlive == false)
+        {
+            SceneManager.LoadScene(1);
+            Debug.Log("Player Died");
+        }
     }
 
     private void FixedUpdate()
@@ -40,13 +47,26 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Collectible")
+        if (other.tag == "Collectible")
         {
-            Destroy(other.gameObject);
-            myScore++;
+            
+            playerAlive = false;
+            
         }
 
-        
+
     }
+ 
+    //void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.gameObject.tag == "Collectible")
+    //    {
+    //        Destroy(other.gameObject);
+    //        myScore++;
+    //    }
+    //}
+
+        
+ 
 
 }

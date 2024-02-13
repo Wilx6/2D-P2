@@ -99,7 +99,7 @@ public class gameManager : MonoBehaviour
         myGameState = GameState.GAMEOVER;
         myPlayer.SetActive(false);
         TitleText.enabled = true;
-        TitleText.text = "Congrats, You Win!";
+        TitleText.text = "Congrats, You Survived!";
 
 
         foreach (var gameObj in GameObject.FindGameObjectsWithTag("Collectible"))

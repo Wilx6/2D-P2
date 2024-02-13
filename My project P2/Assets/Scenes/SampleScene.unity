@@ -349,9 +349,9 @@ MonoBehaviour:
   myPlayer: {fileID: 1543696338}
   timer: 0
   score: 0
-  timeLimit: 3
+  timeLimit: 60
   collectible1: {fileID: 1932740025230164504, guid: f27dc16816ac2b74b815bce2f1f25cc3, type: 3}
-  spawnInterval: 0.01
+  spawnInterval: 1
   spawnTimer: 0
   spawnXBounds: {x: -8.2, y: 8.2}
   spawnYBounds: {x: 4.2, y: -4.2}
@@ -407,6 +407,7 @@ MonoBehaviour:
   speedX: 10
   speedY: 10
   myScore: 0
+  playerAlive: 1
 --- !u!212 &1543696340
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -449,7 +450,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.040144444, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -468,8 +469,8 @@ Transform:
   m_GameObject: {fileID: 1543696338}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.089, y: -0.72, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -638,7 +639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 84, y: 0}
+  m_AnchoredPosition: {x: 110, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1992309616
@@ -661,7 +662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press [SPACE] to Start Game
+  m_text: "Press [SPACE] to Start Game\n          Try To   SURVIVE"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
