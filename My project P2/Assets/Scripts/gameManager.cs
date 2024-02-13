@@ -66,7 +66,9 @@ public class gameManager : MonoBehaviour
 
                 if (spawnTimer > spawnInterval)
                 {
-                    Instantiate(collectible1, targetPos, Quaternion.identity);
+                    GameObject newenemy = Instantiate(collectible1, targetPos, Quaternion.identity);
+                    EnemyControl myControl = newenemy.GetComponent<EnemyControl>();
+                    myControl.myPlayer = myPlayer;
                     spawnTimer = 0;
 
                     
