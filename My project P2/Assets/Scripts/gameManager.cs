@@ -20,6 +20,11 @@ public class gameManager : MonoBehaviour
 
     public TextMeshProUGUI TitleText;
 
+    [Header("Camera Toggle")]
+    public GameObject mainCamera;
+    public bool toggleMainCamera;
+
+
     
 
     public enum GameState
@@ -34,12 +39,16 @@ public class gameManager : MonoBehaviour
     {
         myGameState = GameState.GAMESTART;
         myPlayer.SetActive(false);
-        
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
+
 
         switch (myGameState)
         {
@@ -94,6 +103,13 @@ public class gameManager : MonoBehaviour
         myGameState = GameState.PLAYING;
         myPlayer.SetActive(true);
         TitleText.enabled = false;
+         
+        if (toggleMainCamera == true)
+        {
+            mainCamera.SetActive(false);
+        }
+
+
     }
 
     void EnterFinale()
