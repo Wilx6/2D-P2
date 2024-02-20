@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collectible
   - CameraFollow
+  - Wall
   layers:
   - Default
   - TransparentFX

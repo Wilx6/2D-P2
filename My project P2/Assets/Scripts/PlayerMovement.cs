@@ -41,8 +41,8 @@ public class PlayerMovement : MonoBehaviour
         moveX = Input.GetAxis("Horizontal");
         moveY = Input.GetAxis("Vertical");
 
-        rb.velocity = new Vector2(moveX * speedX, rb.velocity.y);
-        rb.velocity = new Vector2(rb.velocity.x, moveY * speedY);
+        rb.velocity = new Vector2(moveX * speedX, rb.velocity.y) * Time.fixedDeltaTime;
+        rb.velocity = new Vector2(rb.velocity.x, moveY * speedY) * Time.fixedDeltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D other)
