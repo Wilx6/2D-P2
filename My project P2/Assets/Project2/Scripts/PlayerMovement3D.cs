@@ -15,6 +15,7 @@ public class PlayerMovement3D : MonoBehaviour
 
     public float lookSpeed = 100f;
     public Camera myCam;
+    public float camLock;
 
     Vector3 myLook;
 
@@ -24,6 +25,7 @@ public class PlayerMovement3D : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         myLook = myCam.transform.forward;
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
        
     }
 
@@ -33,6 +35,8 @@ public class PlayerMovement3D : MonoBehaviour
         Vector3 playerLook = myCam.transform.forward;
         Vector3 newLook = DeltaLook();
         myLook += DeltaLook() * Time.deltaTime;
+
+        myLook = Vector3.ClampMagnitude(myLook, camLock);
         
         transform.rotation = Quaternion.Euler(0f, myLook.x, 0f);
         myCam.transform.rotation = Quaternion.Euler(-myLook.y, myLook.x, 0f);

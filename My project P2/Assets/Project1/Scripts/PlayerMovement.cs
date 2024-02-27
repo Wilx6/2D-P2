@@ -41,19 +41,23 @@ public class PlayerMovement : MonoBehaviour
         moveX = Input.GetAxis("Horizontal");
         moveY = Input.GetAxis("Vertical");
 
-        rb.velocity = new Vector2(moveX * speedX, rb.velocity.y) * Time.fixedDeltaTime;
-        rb.velocity = new Vector2(rb.velocity.x, moveY * speedY) * Time.fixedDeltaTime;
+        rb.velocity = new Vector2(moveX * speedX, rb.velocity.y);
+        rb.velocity = new Vector2(rb.velocity.x, moveY * speedY);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Collectible")
+        if (other.tag == "Wall")
         {
             
             playerAlive = false;
             
         }
 
+        if (other.tag == "Win")
+        {
+            SceneManager.LoadScene(2);
+        }
 
     }
  
