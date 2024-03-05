@@ -13,6 +13,9 @@ public class PlayerMovement3D : MonoBehaviour
     private float moveX;
     private float moveZ;
 
+    public float jump;
+    public bool onGround = false;
+
     public float lookSpeed = 100f;
     public Camera myCam;
     public float camLock;
@@ -26,7 +29,7 @@ public class PlayerMovement3D : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         myLook = myCam.transform.forward;
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-       
+        
     }
 
     // Update is called once per frame
@@ -36,10 +39,17 @@ public class PlayerMovement3D : MonoBehaviour
         Vector3 newLook = DeltaLook();
         myLook += DeltaLook() * Time.deltaTime;
 
-        myLook = Vector3.ClampMagnitude(myLook, camLock);
+        myLook.y = Mathf.Clamp(myLook.y, -camLock, camLock);
         
         transform.rotation = Quaternion.Euler(0f, myLook.x, 0f);
         myCam.transform.rotation = Quaternion.Euler(-myLook.y, myLook.x, 0f);
+
+        if (Input.GetKey(KeyCode.Return))
+        {
+            Kick();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
 
     }
     private void FixedUpdate()
@@ -48,10 +58,26 @@ public class PlayerMovement3D : MonoBehaviour
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
 
-        rb.velocity = new Vector3(moveX * speedX, 0, rb.velocity.z);
-        rb.velocity = new Vector3(rb.velocity.x, 0, moveZ * speedZ);
+        rb.AddForce(new Vector3(moveX * speedX, 0, moveZ * speedZ));
+        
+
 
     }
+
+    void jump()
+    {
+        
+    }
+
+    
+    void OnCollisionStay(Collision other)
+    { 
+        if (other.gameObject.tag == "Ground")
+        {
+            onGround = true;
+        }
+    }
+
 
     Vector3 DeltaLook()
     {
@@ -69,4 +95,18 @@ public class PlayerMovement3D : MonoBehaviour
         return dLook;
 
     }
+
+    void Kick()
+    {
+        bool rayCast = Physics.Raycast(transform.position, Vector3.forward, 5f);
+        Debug.DrawRay(transform.position, Vector3.forward * 5f, Color.blue);
+        
+        if(rayCast)
+        {
+
+        }
+
+    }
+
+   
 }
