@@ -8,6 +8,7 @@ TagManager:
   - CameraFollow
   - Wall
   - Win
+  - Terrain
   layers:
   - Default
   - TransparentFX

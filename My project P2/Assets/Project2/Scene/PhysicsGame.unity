@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 873641137}
   - component: {fileID: 873641135}
   - component: {fileID: 873641134}
-  - component: {fileID: 873641133}
+  - component: {fileID: 873641140}
   m_Layer: 0
   m_Name: Player3D
   m_TagString: Untagged
@@ -144,22 +144,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &873641133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873641132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ecc22cd74445d442b9dc132b7950705, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedX: 100
-  speedZ: 100
-  lookSpeed: 1000
-  myCam: {fileID: 2069384063}
 --- !u!136 &873641134
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -191,7 +175,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873641132}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -276,6 +260,25 @@ Transform:
   - {fileID: 2069384064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &873641140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873641132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b5bf952811ba947aa58e93579be4a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5000
+  lookSpeed: 100
+  jumpForce: 600
+  canJump: 0
+  jumped: 0
+  myCam: {fileID: 2069384063}
+  camLock: 0
 --- !u!1 &1478529283
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +387,7 @@ GameObject:
   - component: {fileID: 1974488174}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
