@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Win
   - Terrain
+  - Ball
   layers:
   - Default
   - TransparentFX
