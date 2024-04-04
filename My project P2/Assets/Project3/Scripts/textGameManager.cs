@@ -8,6 +8,32 @@ using UnityEngine.Rendering;
 public class textGameManager : MonoBehaviour
 {
 
+    private static textGameManager _MgrInstance;
+
+    public static textGameManager myInstance
+    {
+        get
+        { 
+            if(_MgrInstance == null)
+            {
+                GameObject myGO = new GameObject("GameManager");
+                myGO.AddComponent<textGameManager>();
+                DontDestroyOnLoad(myGO);
+            }
+            return _MgrInstance;
+        }
+
+        
+    }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    public static void InitializeManager()
+    {
+        textGameManager newMgr = textGameManager.myInstance;
+    }
+
+    public List<string> myInventory;
+
     public TMP_InputField myInput;
     public string playerName;
 

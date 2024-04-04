@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Project3/MainMenu.unity
+    path: Assets/Project3/Scenes/MainMenu.unity
     guid: 8c216f6332cb9184a88c21a8b67f11fc
   - enabled: 1
-    path: Assets/Project3/textRoom1.unity
+    path: Assets/Project3/Scenes/textRoom1.unity
     guid: 596185a1d59c7734fb5a2d0a00f1b5c4
   - enabled: 1
-    path: Assets/Project3/textRoom2.unity
+    path: Assets/Project3/Scenes/textRoom2.unity
     guid: f6039eab1a68e794fb6e14eec6015bfd
   m_configObjects: {}
