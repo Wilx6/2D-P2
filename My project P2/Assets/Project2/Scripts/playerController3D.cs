@@ -30,14 +30,26 @@ public class playerController3D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
 
-
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.W))
         {
-            myRB.AddForce(Vector3.forward * force, ForceMode.Force);
+            myRB.AddForce(Vector3.forward * force);
         }
         
+        if (Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.S))
+        {
+            myRB.AddForce(Vector3.back * force);
+        }
+        
+        if (Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.A))
+        {
+            myRB.AddForce(Vector3.left * force);
+        }
+
+        if (Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.D))
+        {
+            myRB.AddForce(Vector3.right * force);
+        }
     }
 
     void FixedUpdate()
