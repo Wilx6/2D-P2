@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class buttonHelper : MonoBehaviour
 {
 
-    public textGameManager myMgr;
+    
 
     public void Start()
     {
-        myMgr = FindObjectOfType<textGameManager>();
+        
     }
 
     public void GoToScene(string sceneName)
@@ -21,7 +21,7 @@ public class buttonHelper : MonoBehaviour
 
     public void AddToInventory(string item)
     {
-        myMgr.myInventory.Add(item);
+        
     }
 
     public void EnableObject(GameObject target)
@@ -31,7 +31,7 @@ public class buttonHelper : MonoBehaviour
 
     public void SetName(string name)
     {
-        myMgr.name = name;
+        
     }
 
 }

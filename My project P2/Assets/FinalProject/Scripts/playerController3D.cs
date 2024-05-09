@@ -18,12 +18,16 @@ public class playerController3D : MonoBehaviour
 
     public float force;
 
-    
+    public float scale = .1f;
+
+    Renderer ren;
 
     // Start is called before the first frame update
     void Start()
     {
         myRB = GetComponent<Rigidbody>();
+
+        ren = GetComponent<Renderer>();
         
 
     }
@@ -31,25 +35,7 @@ public class playerController3D : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.W))
-        {
-            myRB.AddForce(Vector3.forward * force);
-        }
-        
-        if (Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.S))
-        {
-            myRB.AddForce(Vector3.back * force);
-        }
-        
-        if (Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.A))
-        {
-            myRB.AddForce(Vector3.left * force);
-        }
-
-        if (Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.D))
-        {
-            myRB.AddForce(Vector3.right * force);
-        }
+       
     }
 
     void FixedUpdate()
@@ -57,8 +43,53 @@ public class playerController3D : MonoBehaviour
         Vector3 pMove = transform.TransformDirection(Dir());
         myRB.AddForce(pMove * speed * Time.fixedDeltaTime);
 
+        if (Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.W))
+        {
+            myRB.AddForce(Vector3.forward * force);
 
-        
+            transform.localScale = transform.localScale + new Vector3(0, 0, scale);
+
+            ren.material.color = Color.red;
+
+            StartCoroutine(scaleDownZ());
+            
+        }
+
+        if (Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.S))
+        {
+            myRB.AddForce(Vector3.back * force);
+
+            transform.localScale = transform.localScale + new Vector3(0, 0, scale);
+
+            ren.material.color = Color.red;
+
+            StartCoroutine(scaleDownZ());
+        }
+
+        if (Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.A))
+        {
+            myRB.AddForce(Vector3.left * force);
+
+            transform.localScale = transform.localScale + new Vector3(scale, 0, 0);
+
+            ren.material.color = Color.red;
+
+            StartCoroutine(scaleDownX());
+        }
+
+        if (Input.GetKey(KeyCode.Space) & Input.GetKey(KeyCode.D))
+        {
+            myRB.AddForce(Vector3.right * force);
+
+            transform.localScale = transform.localScale + new Vector3(scale, 0, 0);
+
+            ren.material.color = Color.red;
+
+            StartCoroutine(scaleDownX());
+
+
+        }
+
     }
 
     Vector3 Dir()
@@ -84,10 +115,25 @@ public class playerController3D : MonoBehaviour
         {
            
             transform.position = new Vector3(-31f, 5f, -15f);
+
         }
 
         
     }
 
+    IEnumerator scaleDownZ()
+    {
+        yield return new WaitForSeconds(.3f);
 
+        ren.material.color = Color.green;
+        transform.localScale = transform.localScale + new Vector3(0, 0, -scale);
+    }
+
+    IEnumerator scaleDownX()
+    {
+        yield return new WaitForSeconds(.3f);
+
+        ren.material.color = Color.green;
+        transform.localScale = transform.localScale + new Vector3(-scale, 0, 0);
+    }
 }
