@@ -27,6 +27,8 @@ public class playerController3D : MonoBehaviour
     [Header("Sounds")]
 
     [SerializeField] private AudioClip dashSoundClip;
+    [SerializeField] private AudioClip deathSoundClip;
+    [SerializeField] private AudioClip enemydeathSoundClip;
 
     private AudioSource audioSource;
 
@@ -161,10 +163,16 @@ public class playerController3D : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy" & dashable == true)
         {
+            audioSource.clip = deathSoundClip;
+            audioSource.Play();
             transform.position = new Vector3(-1843f, 2624f, 246f);
         }
         else if (other.gameObject.tag == "Enemy" & dashable == false)
         {
+
+            audioSource.clip = enemydeathSoundClip;
+            audioSource.Play();
+
             Destroy(other.gameObject);
           
         }

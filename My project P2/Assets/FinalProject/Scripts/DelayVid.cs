@@ -6,13 +6,13 @@ using UnityEngine.Video;
 public class DelayVid : MonoBehaviour
 {
 
-    private VideoPlayer myVid;
+    private MeshRenderer myVid;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        myVid = GetComponent<VideoPlayer>();
+        myVid = GetComponent<MeshRenderer>();
         StartCoroutine(PlayVid());
     }
 
@@ -24,7 +24,7 @@ public class DelayVid : MonoBehaviour
 
     IEnumerator PlayVid()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2.5f);
 
         myVid.enabled = true;
     }

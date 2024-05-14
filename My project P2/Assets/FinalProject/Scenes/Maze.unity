@@ -2250,7 +2250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scale: 1.5
-  wallSoundClip: {fileID: 8300000, guid: af0ec021409638a4db092b43761d043a, type: 3}
+  wallSoundClip: {fileID: 8300000, guid: 6f4f92197eaba694ebaee71aa9be9798, type: 3}
 --- !u!82 &91083970
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3126,6 +3126,14 @@ PrefabInstance:
       propertyPath: dashSoundClip
       value: 
       objectReference: {fileID: 8300000, guid: e32d122f2cd616340baf34f495a4f82b, type: 3}
+    - target: {fileID: 861864340584419020, guid: 6f208f11606093744b56737207018e9b, type: 3}
+      propertyPath: deathSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a5023d8ab9707204587763f1fb2ac445, type: 3}
+    - target: {fileID: 861864340584419020, guid: 6f208f11606093744b56737207018e9b, type: 3}
+      propertyPath: enemydeathSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 92d21d7f38add97479a6f1e8a1ba0f6b, type: 3}
     - target: {fileID: 4905057669846017646, guid: 6f208f11606093744b56737207018e9b, type: 3}
       propertyPath: m_Name
       value: Player3D

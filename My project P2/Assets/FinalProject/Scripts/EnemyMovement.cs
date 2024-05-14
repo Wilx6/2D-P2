@@ -14,7 +14,7 @@ public class EnemyMovement : MonoBehaviour
     public float agro;
     private float dis;
 
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +30,14 @@ public class EnemyMovement : MonoBehaviour
 
         if (dis < agro)
         {
+
             //Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
             //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
             //^SmootherTurning,vLocksOnPlayer
             transform.LookAt(player.transform);
             transform.position += transform.forward * speed * Time.deltaTime;
+
+
         }
         
         
