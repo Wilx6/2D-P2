@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Project3/Scenes/MainMenu.unity
-    guid: 8c216f6332cb9184a88c21a8b67f11fc
+    path: Assets/FinalProject/Scenes/Main Menu.unity
+    guid: 845bf268aee33774fbf78f725178bceb
   - enabled: 1
-    path: Assets/Project3/Scenes/textRoom1.unity
-    guid: 596185a1d59c7734fb5a2d0a00f1b5c4
+    path: Assets/FinalProject/Scenes/Maze.unity
+    guid: 7316bc7e554cf5d4f965874af611032f
   - enabled: 1
-    path: Assets/Project3/Scenes/textRoom2.unity
-    guid: f6039eab1a68e794fb6e14eec6015bfd
+    path: Assets/FinalProject/Scenes/End&Restart.unity
+    guid: 62a6f9dfddad9574bb89eb8e8e2c1cf2
+  - enabled: 1
+    path: Assets/FinalProject/Scenes/EasterEgg.unity
+    guid: 92ada221e58412f458fbbccbbcabf80f
   m_configObjects: {}

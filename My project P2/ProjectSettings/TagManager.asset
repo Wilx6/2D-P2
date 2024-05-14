@@ -21,6 +21,9 @@ TagManager:
   - P8
   - P9
   - P10
+  - EE
+  - Enemy
+  - EEWall
   layers:
   - Default
   - TransparentFX

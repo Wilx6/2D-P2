@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5637376796472443342}
   - component: {fileID: 5164420714697945922}
   - component: {fileID: 861864340584419020}
-  - component: {fileID: 3713155380638979444}
   m_Layer: 0
   m_Name: Player3D
   m_TagString: Untagged
@@ -127,24 +126,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5000
   force: 3000
---- !u!135 &3713155380638979444
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4905057669846017646}
-  m_Material: {fileID: 13400000, guid: ce949867ac3900c44bf8f444a4b6fa29, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  scale: 0.1
